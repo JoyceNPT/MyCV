@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .skill-badge {
+            transition: all 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .language-progress {
+            height: 6px;
+            border-radius: 3px;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .active::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="gradient-bg text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">Developer CV</h1>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#projects" class="nav-link">Projects</a></li>
+                        <li><a href="#skills" class="nav-link">Skills</a></li>
+                        <li><a href="#honors" class="nav-link">Honors</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="md:hidden text-2xl" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <ul class="flex flex-col space-y-3">
+                    <li><a href="#about" class="nav-link block py-1">About</a></li>
+                    <li><a href="#projects" class="nav-link block py-1">Projects</a></li>
+                    <li><a href="#skills" class="nav-link block py-1">Skills</a></li>
+                    <li><a href="#honors" class="nav-link block py-1">Honors</a></li>
+                    <li><a href="#contact" class="nav-link block py-1">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Backend Developer</h1>
+                <p class="text-xl mb-6">Specializing in Java Web Applications and .NET Desktop Development</p>
+                <div class="flex space-x-4">
+                    <a href="#contact"
+                        class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition">Contact
+                        Me</a>
+                    <a href="#projects"
+                        class="border-2 border-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition">View
+                        Projects</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="bg-white rounded-full p-2 shadow-2xl">
+                    <img src="https://ik.imagekit.io/bmncdkdwo/ngophuocthinh.jpg?updatedAt=1752479896558"
+                        alt="Developer" class="rounded-full w-64 h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <img src="https://ik.imagekit.io/bmncdkdwo/ngophuocthinh.jpg?updatedAt=1752479896558" alt="About Me"
+                        class="rounded-lg shadow-lg w-64 h-64 object-cover">
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <p class="text-lg mb-6">
+                        As a third -year student with a specialized software engineer. I look forward to finding a
+                        professional working environment to learn,
+                        improve and improve programming skills and system design. My goal is to develop myself into a
+                        good software engineer.
+                        In addition, I wish to accompany, and contribute to the overall success of the team and
+                        businesses.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-laptop-code mr-2"></i>
+                            <span>Web Development</span>
+                        </div>
+                        <div class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-desktop mr-2"></i>
+                            <span>Desktop Applications</span>
+                        </div>
+                        <div class="bg-green-100 text-green-800 px-4 py-2 rounded-full flex items-center">
+                            <i class="fas fa-database mr-2"></i>
+                            <span>Database Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-blue-500 overflow-hidden">
+                        <img src="https://ik.imagekit.io/bmncdkdwo/webtour.jpg?updatedAt=1752481063646"
+                            alt="Web Travel Tour" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Web Travel Tour</h3>
+                        <p class="text-gray-600 mb-4">
+                            A Java web application for booking domestic tours with features for users to browse, book,
+                            and manage their travel plans.
+                        </p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Technologies Used:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">JSP/Servlet</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">JDK 11</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Tomcat 10</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Maven</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">SQL Server</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/JoyceNPT/Web-Application-G2.git"
+                                class="text-blue-600 hover:text-blue-800"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-purple-500 overflow-hidden">
+                        <img src="https://ik.imagekit.io/bmncdkdwo/webcourse.jpg?updatedAt=1752481079004"
+                            alt="Online Course Platform" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Online Course Platform</h3>
+                        <p class="text-gray-600 mb-4">
+                            A comprehensive platform for online learning called FSkills, where users can register for
+                            courses, watch lectures and track their progress.
+                        </p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Technologies Used:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">JSP/Servlet</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">JDK 11</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Tomcat
+                                    10</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Maven</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">SQL
+                                    Server</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/JoyceNPT/FSkills.git"
+                                class="text-purple-600 hover:text-purple-800"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">My Skills</h2>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Professional Skills -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i class="fas fa-code mr-3 text-blue-500"></i>
+                        Professional Skills
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-medium mb-2">Programming Languages</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-blue-100 text-blue-800 px-4 py-2 rounded-full">Java</span>
+                                <span class="skill-badge bg-blue-100 text-blue-800 px-4 py-2 rounded-full">C#</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-medium mb-2">Web Development</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-green-100 text-green-800 px-4 py-2 rounded-full">Java Web
+                                    Application (JSP, Servlet)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-medium mb-2">Desktop Application Development</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="skill-badge bg-purple-100 text-purple-800 px-4 py-2 rounded-full">WPF</span>
+                                <span class="skill-badge bg-purple-100 text-purple-800 px-4 py-2 rounded-full">Windows
+                                    Forms (.NET)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-medium mb-2">Database</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full">SQL
+                                    Server</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-medium mb-2">Cloud</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full">AWS (EC2,
+                                    S3, RDS)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-medium mb-2">Source Code Management</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-badge bg-gray-100 text-gray-800 px-4 py-2 rounded-full">Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills & Languages -->
+                <div>
+                    <!-- Soft Skills -->
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                            <i class="fas fa-users mr-3 text-purple-500"></i>
+                            Soft Skills
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="skill-badge bg-green-100 text-green-800 px-4 py-2 rounded-full">Communication
+                                skills</span>
+                            <span class="skill-badge bg-green-100 text-green-800 px-4 py-2 rounded-full">Presentation
+                                skills</span>
+                            <span class="skill-badge bg-green-100 text-green-800 px-4 py-2 rounded-full">Leading
+                                skills</span>
+                            <span class="skill-badge bg-green-100 text-green-800 px-4 py-2 rounded-full">Group work
+                                skills</span>
+                            <span class="skill-badge bg-green-100 text-green-800 px-4 py-2 rounded-full">Self-study
+                                skills</span>
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                            <i class="fas fa-language mr-3 text-red-500"></i>
+                            Languages
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">English</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">日本語 (Japanese)</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-red-600 h-2.5 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Honors & Awards -->
+    <section id="honors" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Honors & Awards</h2>
+
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div
+                        class="absolute left-1/2 w-1 bg-gradient-to-b from-blue-500 to-purple-500 h-full transform -translate-x-1/2">
+                    </div>
+
+                    <!-- Timeline items -->
+                    <div class="space-y-8">
+                        <!-- Item 1 -->
+                        <div class="relative flex items-center">
+                            <div class="hidden md:block md:w-1/2"></div>
+                            <div class="w-full md:w-1/2 pl-10 md:pl-16">
+                                <div class="bg-white p-6 rounded-lg shadow-md relative">
+                                    <div
+                                        class="absolute -left-3 top-6 w-6 h-6 rounded-full bg-blue-500 border-4 border-white">
+                                    </div>
+                                    <div class="flex items-center mb-2">
+                                        <i class="fas fa-trophy text-yellow-500 mr-2"></i>
+                                        <h3 class="text-xl font-semibold">Honorable Student</h3>
+                                    </div>
+                                    <p class="text-gray-600 mb-2">Fall 2024 Semester</p>
+                                    <p class="text-sm text-gray-500">January 2025</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="relative flex items-center">
+                            <div class="w-full md:w-1/2 pr-10 md:pr-16 text-right">
+                                <div class="bg-white p-6 rounded-lg shadow-md relative">
+                                    <div
+                                        class="absolute -right-3 top-6 w-6 h-6 rounded-full bg-purple-500 border-4 border-white">
+                                    </div>
+                                    <div class="flex items-center justify-end mb-2">
+                                        <h3 class="text-xl font-semibold">Honorable Student</h3>
+                                        <i class="fas fa-trophy text-yellow-500 ml-2"></i>
+                                    </div>
+                                    <p class="text-gray-600 mb-2">Spring 2024 Semester</p>
+                                    <p class="text-sm text-gray-500">May 2025</p>
+                                </div>
+                            </div>
+                            <div class="hidden md:block md:w-1/2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+
+            <div class="max-w-2xl mx-auto bg-gray-50 rounded-xl shadow-md overflow-hidden">
+                <div class="p-8 gradient-bg text-white">
+                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <p>developer@example.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-medium">Phone</h4>
+                                <p>+1 (123) 456-7890</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-medium">Location</h4>
+                                <p>San Francisco, CA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12">
+                        <h4 class="font-medium mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/JoyceNPT"
+                                class="w-10 h-10 rounded-full bg-white text-blue-600 flex items-center justify-center hover:bg-blue-100">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/joycenpt/"
+                                class="w-10 h-10 rounded-full bg-white text-blue-600 flex items-center justify-center hover:bg-blue-100">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-xl font-bold">Developer CV</h2>
+                    <p class="text-gray-400">Backend Developer</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/JoyceNPT" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/joycenpt/" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400">
+                <p>&copy; 2024 Developer CV. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Highlight active navigation link
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
