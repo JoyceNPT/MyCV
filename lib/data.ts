@@ -1,14 +1,14 @@
 
 export const PROFILE = {
     name: "NGO PHUOC THINH",
-    title: ".NET Developer",
-    avatar: "https://ik.imagekit.io/bmncdkdwo/ngophuocthinh.jpg?updatedAt=1752479896558",
+    title: "Associate Software Engineer at FPT Software",
+    avatar: "https://ik.imagekit.io/bmncdkdwo/profile.jpg?updatedAt=1768889840061",
     location: "Can Tho City, Vietnam",
     social: {
         github: "https://github.com/JoyceNPT",
         linkedin: "https://www.linkedin.com/in/joycentpt/",
         email: "mailto:ngothinh.2003.work@gmail.com",
-        phone: "+84 326 290 170",
+        phone: "+84 779 198 539",
     },
     about: "Final-year Software Engineering student with a strong foundation and practical experience in C#, Java, and Spring Boot. Proficient in full-stack development, including web applications (Java Web, ASP.NET Core) and desktop solutions (WPF). Demonstrated expertise in database management (SQL Server, Azure SQL) and cloud services (AWS). Capable of researching and utilizing technical documentation in both English and Japanese. Committed to applying technical proficiency and a problem-solving mindset to deliver high-quality software solutions in a professional environment.",
     skills: {
