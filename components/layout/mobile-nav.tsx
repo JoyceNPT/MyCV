@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import Link from "next/link"
 import { Menu } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -14,6 +13,11 @@ import {
 
 export function MobileNav() {
     const [open, setOpen] = React.useState(false)
+    const navItems = [
+        { href: "/profile", label: "Profile" },
+        { href: "/project", label: "Projects" },
+        { href: "/certifications", label: "Certifications" },
+    ]
 
     return (
         <Sheet open={open} onOpenChange={setOpen}>
@@ -29,34 +33,23 @@ export function MobileNav() {
             <SheetContent side="left" className="pr-0">
                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="flex flex-col space-y-3">
-                    <Link
-                        href="/"
+                    <a
+                        href="/profile"
                         onClick={() => setOpen(false)}
                         className="font-bold"
                     >
                         Portfolio
-                    </Link>
-                    <Link
-                        href="/profile"
-                        onClick={() => setOpen(false)}
-                        className="text-foreground/70 transition-colors hover:text-foreground"
-                    >
-                        Profile
-                    </Link>
-                    <Link
-                        href="/project"
-                        onClick={() => setOpen(false)}
-                        className="text-foreground/70 transition-colors hover:text-foreground"
-                    >
-                        Projects
-                    </Link>
-                    <Link
-                        href="/certifications"
-                        onClick={() => setOpen(false)}
-                        className="text-foreground/70 transition-colors hover:text-foreground"
-                    >
-                        Certifications
-                    </Link>
+                    </a>
+                    {navItems.map((item) => (
+                        <a
+                            key={item.href}
+                            href={item.href}
+                            onClick={() => setOpen(false)}
+                            className="text-foreground/70 transition-colors hover:text-foreground"
+                        >
+                            {item.label}
+                        </a>
+                    ))}
                 </div>
             </SheetContent>
         </Sheet>

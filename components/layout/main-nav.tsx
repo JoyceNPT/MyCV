@@ -1,47 +1,34 @@
 "use client"
 
-import * as React from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-
 import { cn } from "@/lib/utils"
 
+const navItems = [
+    { href: "/profile", label: "Profile" },
+    { href: "/project", label: "Projects" },
+    { href: "/certifications", label: "Certifications" },
+]
+
 export function MainNav() {
-    const pathname = usePathname()
+    const pathname = typeof window === "undefined" ? "/profile" : window.location.pathname
 
     return (
         <div className="mr-4 hidden md:flex">
-            <Link href="/" className="mr-6 flex items-center space-x-2">
+            <a href="/profile" className="mr-6 flex items-center space-x-2">
                 <span className="hidden font-bold sm:inline-block">Portfolio</span>
-            </Link>
+            </a>
             <nav className="flex items-center space-x-6 text-sm font-medium">
-                <Link
-                    href="/profile"
-                    className={cn(
-                        "transition-colors hover:text-foreground/80",
-                        pathname === "/profile" ? "text-foreground" : "text-foreground/60"
-                    )}
-                >
-                    Profile
-                </Link>
-                <Link
-                    href="/project"
-                    className={cn(
-                        "transition-colors hover:text-foreground/80",
-                        pathname === "/project" ? "text-foreground" : "text-foreground/60"
-                    )}
-                >
-                    Projects
-                </Link>
-                <Link
-                    href="/certifications"
-                    className={cn(
-                        "transition-colors hover:text-foreground/80",
-                        pathname === "/certifications" ? "text-foreground" : "text-foreground/60"
-                    )}
-                >
-                    Certifications
-                </Link>
+                {navItems.map((item) => (
+                    <a
+                        key={item.href}
+                        href={item.href}
+                        className={cn(
+                            "transition-colors hover:text-foreground/80",
+                            pathname === item.href ? "text-foreground" : "text-foreground/60"
+                        )}
+                    >
+                        {item.label}
+                    </a>
+                ))}
             </nav>
         </div>
     )
