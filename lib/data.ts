@@ -139,8 +139,7 @@ export const PROJECTS = [
         ],
         tags: ["ASP.NET Core", "React", "TypeScript", "PostgreSQL", "Redis", "Docker", "AWS", "AI-driven Dev"],
         link: "https://touchlove.id.vn",
-        repo: "#",
-        image: "https://ik.imagekit.io/thinhxdev/Projects/TouchLove/project.jpg?updatedAt=1786299317881"
+        repo: "#"
     },
     {
         id: 5,
@@ -156,8 +155,7 @@ export const PROJECTS = [
         ],
         tags: ["C#", ".NET Core", "SQL Server", "EF Core", "Clean Architecture", "React", "Flutter"],
         link: "#",
-        repo: "#",
-        image: "https://ik.imagekit.io/thinhxdev/Projects/PMPPlatform/project.jpg"
+        repo: "#"
     },
     {
         id: 3,

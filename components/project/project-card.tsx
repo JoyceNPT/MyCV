@@ -12,17 +12,11 @@ interface Project {
     tags: string[]
     link: string
     repo: string
-    image?: string
 }
 
 export function ProjectCard({ project }: { project: Project }) {
     return (
         <article className="dev-card flex h-full flex-col gap-5">
-            {project.image && (
-                <div className="relative h-48 w-full overflow-hidden rounded-lg border border-border/50 bg-secondary/50">
-                    <img src={project.image} alt={project.title} className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
-                </div>
-            )}
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                 <div className="min-w-0">
                     <p className="font-mono text-xs text-primary">project::{project.id}</p>
