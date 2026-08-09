@@ -138,7 +138,7 @@ export const PROJECTS = [
             "Focused on system thinking: clear problem definition, architecture control, and production-ready review."
         ],
         tags: ["ASP.NET Core", "React", "TypeScript", "PostgreSQL", "Redis", "Docker", "AWS", "AI-driven Dev"],
-        link: "https://touchlove.id.vn",
+        link: "https://touchlove.thinhxdev.id.vn",
         repo: "#"
     },
     {
@@ -154,7 +154,7 @@ export const PROJECTS = [
             "Ensured high performance and security across the platform."
         ],
         tags: ["C#", ".NET Core", "SQL Server", "EF Core", "Clean Architecture", "React", "Flutter"],
-        link: "#",
+        link: "https://pmp.thinhxdev.id.vn",
         repo: "#"
     },
     {
