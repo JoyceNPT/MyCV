@@ -139,7 +139,25 @@ export const PROJECTS = [
         ],
         tags: ["ASP.NET Core", "React", "TypeScript", "PostgreSQL", "Redis", "Docker", "AWS", "AI-driven Dev"],
         link: "https://touchlove.id.vn",
-        repo: "#"
+        repo: "#",
+        image: "https://ik.imagekit.io/thinhxdev/Projects/TouchLove/project.jpg?updatedAt=1786299317881"
+    },
+    {
+        id: 5,
+        category: "real",
+        title: "PMP Platform",
+        subtitle: "Project Management Platform",
+        period: "2026",
+        description: "A comprehensive project management platform that streamlines project execution, resource allocation, and team collaboration. Features include task tracking, milestone management, and real-time progress reporting.",
+        responsibilities: [
+            "Architected and developed the backend services using .NET Core Clean Architecture.",
+            "Implemented RESTful APIs, database schema design, and integration with external services.",
+            "Ensured high performance and security across the platform."
+        ],
+        tags: ["C#", ".NET Core", "SQL Server", "EF Core", "Clean Architecture", "React", "Flutter"],
+        link: "#",
+        repo: "#",
+        image: "https://ik.imagekit.io/thinhxdev/Projects/PMPPlatform/project.jpg"
     },
     {
         id: 3,
