@@ -9,6 +9,7 @@ interface Certification {
     issuer: string
     date: string
     link: string
+    tier?: string
 }
 
 interface CertGroup {
@@ -21,7 +22,13 @@ export function CertList({ certifications, groups }: { certifications: Certifica
     return (
         <div className="mt-6 space-y-6">
             {groups.map((group) => {
-                const groupedCerts = certifications.filter((cert) => cert.category === group.id)
+                const groupedCerts = certifications
+                    .filter((cert) => cert.category === group.id)
+                    .sort((a, b) => {
+                        if (a.tier === "Premium" && b.tier !== "Premium") return -1;
+                        if (a.tier !== "Premium" && b.tier === "Premium") return 1;
+                        return 0;
+                    })
 
                 if (groupedCerts.length === 0) {
                     return null
@@ -46,7 +53,14 @@ export function CertList({ certifications, groups }: { certifications: Certifica
                                     <article key={cert.id} className="dev-card flex h-full flex-col gap-4">
                                         <div className="flex items-start justify-between gap-3">
                                             <div className="min-w-0">
-                                                <p className="font-mono text-xs text-primary">cert::{cert.id}</p>
+                                                <div className="flex items-center gap-2">
+                                                    <p className="font-mono text-xs text-primary">cert::{cert.id}</p>
+                                                    {cert.tier && (
+                                                        <Badge variant={cert.tier === "Premium" ? "default" : "outline"} className="text-[10px] h-4 px-1.5 font-mono">
+                                                            {cert.tier}
+                                                        </Badge>
+                                                    )}
+                                                </div>
                                                 <h3 className="mt-1 text-base font-semibold leading-6">{cert.name}</h3>
                                                 <p className="mt-1 text-sm text-muted-foreground">{cert.issuer}</p>
                                             </div>

@@ -211,12 +211,22 @@ export const CERTIFICATION_GROUPS = [
 
 export const CERTIFICATIONS = [
     {
+        id: 11,
+        category: "ai",
+        name: "GH-300: GitHub Copilot",
+        issuer: "Microsoft",
+        date: "08/2026",
+        link: "https://learn.microsoft.com/en-us/credentials/certifications/github-copilot/",
+        tier: "Premium",
+    },
+    {
         id: 1,
         category: "ai",
         name: "Gemini Certified Educator",
         issuer: "Google",
         date: "02/2026",
         link: "https://edu.google.accredible.com/bae5c465-21da-44b0-bf46-21de1c8a62cb#acc.zgc3lu0Z",
+        tier: "Premium",
     },
     {
         id: 2,
@@ -225,6 +235,7 @@ export const CERTIFICATIONS = [
         issuer: "Anthropic",
         date: "07/2026",
         link: "https://verify.skilljar.com/c/fghc3h4c4xqk",
+        tier: "Standard",
     },
     {
         id: 3,
@@ -233,6 +244,7 @@ export const CERTIFICATIONS = [
         issuer: "Google",
         date: "07/2026",
         link: "https://edu.exceedlms.com/student/award/8t45Mq1EJ4ChYzwWWLBRN4Hv",
+        tier: "Standard",
     },
     {
         id: 4,
@@ -241,6 +253,7 @@ export const CERTIFICATIONS = [
         issuer: "Coursera",
         date: "09/2024",
         link: "https://www.coursera.org/account/accomplishments/specialization/certificate/SROU16DZ06R9",
+        tier: "Premium",
     },
     {
         id: 5,
@@ -249,6 +262,7 @@ export const CERTIFICATIONS = [
         issuer: "Coursera",
         date: "01/2025",
         link: "https://www.coursera.org/account/accomplishments/specialization/certificate/CXA5RG0TA8PG",
+        tier: "Premium",
     },
     {
         id: 6,
@@ -257,6 +271,7 @@ export const CERTIFICATIONS = [
         issuer: "Udemy",
         date: "06/2025",
         link: "https://www.udemy.com/certificate/UC-98f9c882-d1e9-4be7-a479-66c819e99c18/",
+        tier: "Premium",
     },
     {
         id: 7,
@@ -265,6 +280,7 @@ export const CERTIFICATIONS = [
         issuer: "Udemy",
         date: "06/2025",
         link: "https://www.udemy.com/certificate/UC-d6e7c062-2036-4a5d-982f-5f18f5765b4e/",
+        tier: "Premium",
     },
     {
         id: 8,
@@ -273,6 +289,7 @@ export const CERTIFICATIONS = [
         issuer: "Coursera",
         date: "06/2025",
         link: "https://www.coursera.org/account/accomplishments/specialization/certificate/S0S5NKAWIXV2",
+        tier: "Premium",
     },
     {
         id: 9,
@@ -281,6 +298,7 @@ export const CERTIFICATIONS = [
         issuer: "freeCodeCamp",
         date: "10/2025",
         link: "https://www.freecodecamp.org/certification/thinhxdev/foundational-c-sharp-with-microsoft",
+        tier: "Standard",
     },
     {
         id: 10,
@@ -289,5 +307,6 @@ export const CERTIFICATIONS = [
         issuer: "Rikkei Education",
         date: "12/2025",
         link: "https://drive.google.com/file/d/1WdBQ4VtV-0wlAzfa7K7TAjjbGHZ2xwRa/view?usp=sharing",
+        tier: "Standard",
     }
 ];
