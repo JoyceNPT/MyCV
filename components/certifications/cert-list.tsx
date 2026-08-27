@@ -1,6 +1,5 @@
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Award, ExternalLink, Terminal } from "lucide-react"
+import { Award, Terminal } from "lucide-react"
 
 interface Certification {
     id: number
@@ -35,7 +34,7 @@ export function CertList({ certifications, groups }: { certifications: Certifica
                 }
 
                 return (
-                    <section key={group.id} className="dev-panel">
+                    <section key={group.id} className="dev-panel backdrop-blur-sm bg-background/80 hover:shadow-xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-500 ease-out">
                         <div className="dev-panel-title">
                             <span className="flex items-center gap-2">
                                 <Award className="size-4 text-primary" />
@@ -50,31 +49,24 @@ export function CertList({ certifications, groups }: { certifications: Certifica
                             </p>
                             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                                 {groupedCerts.map(cert => (
-                                    <article key={cert.id} className="dev-card flex h-full flex-col gap-4">
-                                        <div className="flex items-start justify-between gap-3">
-                                            <div className="min-w-0">
-                                                <div className="flex items-center gap-2">
-                                                    <p className="font-mono text-xs text-primary">cert::{cert.id}</p>
-                                                    {cert.tier && (
-                                                        <Badge variant={cert.tier === "Premium" ? "default" : "outline"} className="text-[10px] h-4 px-1.5 font-mono">
-                                                            {cert.tier}
-                                                        </Badge>
-                                                    )}
+                                    <a key={cert.id} href={cert.link} target="_blank" rel="noreferrer" className="block h-full group">
+                                        <article className="dev-card flex h-full flex-col gap-4 hover:scale-[1.02] hover:shadow-lg hover:border-primary/40 transition-all duration-300 hover:bg-background/60 cursor-pointer">
+                                            <div className="flex items-start justify-between gap-3">
+                                                <div className="min-w-0">
+                                                    <div className="flex items-center gap-2">
+                                                        {cert.tier && (
+                                                            <Badge variant={cert.tier === "Premium" ? "default" : "outline"} className={`text-[10px] h-4 px-1.5 font-mono ${cert.tier !== "Premium" && "border-border/50 bg-background/50"}`}>
+                                                                {cert.tier}
+                                                            </Badge>
+                                                        )}
+                                                    </div>
+                                                    <h3 className="mt-2 text-base font-bold leading-6 group-hover:text-primary transition-colors">{cert.name}</h3>
+                                                    <p className="mt-1 text-sm font-medium text-muted-foreground">{cert.issuer}</p>
                                                 </div>
-                                                <h3 className="mt-1 text-base font-semibold leading-6">{cert.name}</h3>
-                                                <p className="mt-1 text-sm text-muted-foreground">{cert.issuer}</p>
+                                                <Badge variant="secondary" className="shrink-0 font-mono text-xs bg-background/50">{cert.date}</Badge>
                                             </div>
-                                            <Badge variant="secondary" className="shrink-0 font-mono">{cert.date}</Badge>
-                                        </div>
-                                        <div className="mt-auto">
-                                            <Button variant="outline" size="sm" asChild>
-                                                <a href={cert.link} target="_blank" rel="noreferrer">
-                                                    <ExternalLink className="w-4 h-4" />
-                                                    Verify
-                                                </a>
-                                            </Button>
-                                        </div>
-                                    </article>
+                                        </article>
+                                    </a>
                                 ))}
                             </div>
                         </div>

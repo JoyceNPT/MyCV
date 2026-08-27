@@ -1,6 +1,6 @@
 import * as React from "react"
 
-type Theme = "light" | "dark" | "dracula" | "aqua" | "cupcake" | "system"
+type Theme = "light" | "dark" | "galaxy" | "system"
 
 type ThemeContextValue = {
     theme: Theme
@@ -29,7 +29,7 @@ export function ThemeProvider({ children, defaultTheme = "system" }: { children:
     React.useEffect(() => {
         const root = document.documentElement
         const applyTheme = () => {
-            root.classList.remove("light", "dark", "dracula", "aqua", "cupcake")
+            root.classList.remove("light", "dark", "galaxy")
             root.classList.add(resolveTheme(theme))
         }
 

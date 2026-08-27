@@ -1,12 +1,35 @@
 import { CertList } from "@/components/certifications/cert-list"
 import { CERTIFICATION_GROUPS, CERTIFICATIONS } from "@/lib/data"
 import { BadgeCheck, Boxes, Terminal } from "lucide-react"
+import { ParticlesBackground } from "@/components/particles-background"
+import { motion, type Variants } from "framer-motion"
+
+const staggerContainer: Variants = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: { staggerChildren: 0.1 }
+    }
+}
+
+const itemFadeUp: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+}
 
 export function CertificationsPage() {
     return (
-        <div className="dev-profile min-h-screen bg-background">
-            <div className="container mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                <section className="dev-hero">
+        <div className="dev-profile min-h-screen bg-background relative overflow-hidden text-foreground">
+            <ParticlesBackground />
+            
+            <div className="container relative z-10 mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+                <motion.section 
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.1 }}
+                    variants={staggerContainer}
+                    className="dev-hero overflow-hidden backdrop-blur-md bg-background/60 border border-border shadow-lg hover:shadow-2xl hover:border-primary/40 transition-all duration-500 ease-out hover:-translate-y-1"
+                >
                     <div className="dev-window-bar">
                         <span className="bg-red-400" />
                         <span className="bg-amber-400" />
@@ -14,8 +37,8 @@ export function CertificationsPage() {
                         <code>~/portfolio/certifications.registry</code>
                     </div>
                     <div className="grid gap-6 p-5 md:grid-cols-[minmax(0,1fr)_320px] md:p-8">
-                        <div className="space-y-4">
-                            <p className="flex items-center gap-2 font-mono text-sm text-primary">
+                        <motion.div variants={itemFadeUp} className="space-y-4">
+                            <p className="flex items-center gap-2 font-mono text-sm font-bold text-primary">
                                 <Terminal className="size-4" />
                                 verify --all
                             </p>
@@ -23,21 +46,21 @@ export function CertificationsPage() {
                             <p className="max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base">
                                 A compact credential registry grouped by professional foundations, AI capability, and soft-skill growth.
                             </p>
-                        </div>
-                        <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-1">
-                            <div className="dev-card">
+                        </motion.div>
+                        <motion.div variants={itemFadeUp} className="grid gap-3 sm:grid-cols-2 md:grid-cols-1">
+                            <div className="dev-card bg-background/40 hover:bg-background/60 transition-colors">
                                 <BadgeCheck className="size-5 text-primary" />
                                 <p className="mt-3 font-mono text-2xl font-bold">{CERTIFICATIONS.length}</p>
-                                <p className="text-sm text-muted-foreground">verified records</p>
+                                <p className="text-sm font-medium text-muted-foreground">verified records</p>
                             </div>
-                            <div className="dev-card">
+                            <div className="dev-card bg-background/40 hover:bg-background/60 transition-colors">
                                 <Boxes className="size-5 text-primary" />
                                 <p className="mt-3 font-mono text-2xl font-bold">{CERTIFICATION_GROUPS.length}</p>
-                                <p className="text-sm text-muted-foreground">skill lanes</p>
+                                <p className="text-sm font-medium text-muted-foreground">skill lanes</p>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
-                </section>
+                </motion.section>
 
                 <CertList certifications={CERTIFICATIONS} groups={CERTIFICATION_GROUPS} />
             </div>

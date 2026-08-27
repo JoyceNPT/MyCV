@@ -31,7 +31,7 @@ export function ProjectGrid({ projects, groups }: { projects: Project[]; groups:
                 }
 
                 return (
-                    <section key={group.id} className="dev-panel">
+                    <section key={group.id} className="dev-panel backdrop-blur-sm bg-background/80 hover:shadow-xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-500 ease-out">
                         <div className="dev-panel-title">
                             <span className="flex items-center gap-2">
                                 <FolderGit2 className="size-4 text-primary" />

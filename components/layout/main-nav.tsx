@@ -1,6 +1,8 @@
 "use client"
 
 import { cn } from "@/lib/utils"
+import { Link } from "@/components/ui/link"
+import { useState, useEffect } from "react"
 
 const navItems = [
     { href: "/profile", label: "Profile" },
@@ -9,16 +11,26 @@ const navItems = [
 ]
 
 export function MainNav() {
-    const pathname = typeof window === "undefined" ? "/profile" : window.location.pathname
+    const [pathname, setPathname] = useState(typeof window === "undefined" ? "/profile" : window.location.pathname)
+
+    useEffect(() => {
+        const handleLocationChange = () => setPathname(window.location.pathname)
+        window.addEventListener("popstate", handleLocationChange)
+        window.addEventListener("pushstate", handleLocationChange)
+        return () => {
+            window.removeEventListener("popstate", handleLocationChange)
+            window.removeEventListener("pushstate", handleLocationChange)
+        }
+    }, [])
 
     return (
         <div className="mr-4 hidden md:flex">
-            <a href="/profile" className="mr-6 flex items-center space-x-2">
+            <Link href="/profile" className="mr-6 flex items-center space-x-2">
                 <span className="hidden font-bold sm:inline-block">Portfolio</span>
-            </a>
+            </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
                 {navItems.map((item) => (
-                    <a
+                    <Link
                         key={item.href}
                         href={item.href}
                         className={cn(
@@ -27,7 +39,7 @@ export function MainNav() {
                         )}
                     >
                         {item.label}
-                    </a>
+                    </Link>
                 ))}
             </nav>
         </div>

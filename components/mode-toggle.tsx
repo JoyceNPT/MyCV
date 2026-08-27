@@ -18,9 +18,7 @@ export function ModeToggle() {
     const themes = [
         { id: "light", label: "Light", icon: Sun },
         { id: "dark", label: "Dark", icon: Moon },
-        { id: "dracula", label: "Dracula Neon", icon: Sparkles },
-        { id: "aqua", label: "Aqua Neon", icon: Droplets },
-        { id: "cupcake", label: "Cupcake Neon", icon: Sparkles },
+        { id: "galaxy", label: "Galaxy", icon: Sparkles },
         { id: "system", label: "System", icon: Sun },
     ] as const
 
